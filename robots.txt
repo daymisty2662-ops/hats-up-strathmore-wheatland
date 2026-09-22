@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /owner
+Disallow: /owner.html
+Sitemap: https://whats-up-strathmore-wheatland.vercel.app/sitemap.xml

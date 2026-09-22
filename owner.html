@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#102a43">
+  <title>Owner Review — What’s Up?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="/"><span class="mark">?</span><span><strong>What’s Up?</strong><small>Owner review</small></span></a><a class="primary-link" href="/">Back to site</a></div></header>
+  <main class="wrap owner-page">
+    <section class="panel owner-login-panel" id="loginPanel">
+      <h1>Owner review</h1>
+      <p class="muted">Pending submissions remain private until approved. Sign in with a one-time code sent to the owner phone on file.</p>
+      <div class="owner-login" id="sendStep"><button id="sendCode" class="primary-button" type="button">Send code</button></div>
+      <div class="owner-login" id="verifyStep" hidden>
+        <input id="otpCode" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" placeholder="6-digit code" aria-label="6-digit login code">
+        <button id="verifyCode" class="primary-button" type="button">Verify &amp; open</button>
+        <button id="resendCode" class="chip" type="button">Resend code</button>
+      </div>
+      <p id="ownerStatus" class="muted" aria-live="polite"></p>
+    </section>
+    <section class="panel owner-login-panel" id="signedInPanel" hidden>
+      <div class="topbar-inner" style="min-height:0"><div><strong>Owner access active</strong><div class="muted">This browser session stays signed in for up to 8 hours.</div></div><button id="signOut" class="chip" type="button">Sign out</button></div>
+    </section>
+    <section id="ownerList" class="owner-list"></section>
+  </main>
+  <script src="/owner.js" defer></script>
+</body>
+</html>

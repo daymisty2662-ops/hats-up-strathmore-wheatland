@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="Find community events, live music, sports, markets, family activities, leagues and more in Strathmore and Wheatland County, Alberta.">
+  <meta property="og:title" content="What’s Up? — Strathmore & Wheatland County">
+  <meta property="og:description" content="Verified local events and things to do in Strathmore & Wheatland County.">
+  <meta property="og:url" content="https://whats-up-strathmore-wheatland.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What’s Up? — Strathmore & Wheatland County">
+  <meta name="twitter:description" content="Verified local events and things to do in Strathmore & Wheatland County.">
+  <link rel="canonical" href="https://whats-up-strathmore-wheatland.vercel.app/">
+  <title>What’s Up? — Strathmore & Wheatland County</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top"><span class="mark">?</span><span><strong>What’s Up?</strong><small>Strathmore &amp; Wheatland County</small></span></a>
+      <a class="primary-link" href="#submit">+ Add event</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <h1>What’s happening around here?</h1>
+      <p>Community events, live music, leagues, local sports, markets, arts, family activities and other things people can actually go do.</p>
+      <div class="refresh" id="refreshStatus">Live event database</div>
+    </section>
+
+    <section class="wrap" id="events">
+      <div class="panel filters">
+        <input id="q" class="search" type="search" placeholder="Search event, venue or organizer…" aria-label="Search events">
+
+        <div class="chips" id="chips">
+          <button class="chip active" data-category="all" type="button">All</button>
+          <button class="chip" data-category="family" type="button">Family</button>
+          <button class="chip" data-category="arts" type="button">Arts &amp; music</button>
+          <button class="chip" data-category="community" type="button">Community</button>
+          <button class="chip" data-category="sports" type="button">Sports</button>
+          <button class="chip" data-category="social" type="button">Nightlife &amp; leagues</button>
+          <button class="chip" data-category="seniors" type="button">55+</button>
+          <button class="chip" data-category="free" type="button">Free</button>
+        </div>
+
+        <div class="selects">
+          <label>Audience
+            <select id="aud">
+              <option value="all">All audiences</option>
+              <option value="kids">Kids/family</option>
+              <option value="teens">Teens</option>
+              <option value="adults">Adults</option>
+              <option value="seniors">55+</option>
+              <option value="allages">All ages</option>
+              <option value="special">Special audience</option>
+            </select>
+          </label>
+
+          <label>Venue
+            <select id="venue">
+              <option value="all">All venues</option>
+            </select>
+          </label>
+
+          <label>Group by
+            <select id="group">
+              <option value="none">No grouping</option>
+              <option value="date">Date</option>
+              <option value="venue">Venue</option>
+              <option value="audience">Audience</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <div>
+          <h2>Upcoming things to do</h2>
+          <p id="summary">Loading current listings…</p>
+        </div>
+      </div>
+
+      <div id="list" class="grid">
+        <div class="empty">Loading current events…</div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="sources">
+      <h2>How listings are found</h2>
+      <p class="muted">Daily scans monitor official venue and organizer sites, community calendars, sports systems, ticketing sites and local media. Stronger primary sources are preferred when details conflict.</p>
+
+      <div class="source-grid">
+        <article>
+          <strong>Core sources</strong>
+          <span>Municipal, library, Legion, arts, sports, markets and other established calendars.</span>
+        </article>
+
+        <article>
+          <strong>Secondary discovery</strong>
+          <span>Theatre, curling, family resources, rural organizations, local news and additional community sources.</span>
+        </article>
+
+        <article>
+          <strong>Difficult-site checks</strong>
+          <span>Browser-based checks cover sites that ordinary crawlers cannot reliably read.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="submit">
+      <div class="panel form-panel">
+        <h2>Add a community event</h2>
+        <p class="muted">Submissions go into a private review queue. Nothing appears publicly until it is approved.</p>
+
+        <form id="eventForm" autocomplete="on">
+          <label class="hp" aria-hidden="true">Website
+            <input name="website" type="text" tabindex="-1" autocomplete
